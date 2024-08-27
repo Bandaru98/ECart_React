@@ -1,8 +1,13 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+    {/* Smoothpageup variable */ }
+    const { pathname } = useLocation()
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ height: '100px' }}>
