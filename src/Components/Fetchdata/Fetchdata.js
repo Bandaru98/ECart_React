@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-
+import { addToCart } from '../../Redux/ProductAction/ProductAction'
+import { useDispatch } from 'react-redux'
 
 const Fetchdata = () => {
+    const dispatch = useDispatch()
+
     const [pro, setPro] = useState([])
     useEffect(() => {
         getdata()
+        window.scrollTo(0,0)
     }, [])
     const getdata = async () => {
         const data = await fetch(`https://fakestoreapi.com/products`)
@@ -38,8 +42,16 @@ const Fetchdata = () => {
                                             <h4>Category: {item.category}</h4>
                                             <p>Desc: {item.description}</p>
                                             <h4>Price: {item.price}</h4>
-                                            <h4>Ratings: {item.rating.rate}</h4>
+                                            {/* <h4>Ratings: {item.rating.rate}</h4> */}
                                         </div>
+
+                                        <div className='d-flex justify-content-between mt-4 mb-4 ms-4 me-4'>
+                                            <h5>Ratings: {item.rating.rate}</h5>
+                                            <button className='btn btn-info'
+                                                onClick={() => { dispatch(addToCart(item)) }}
+                                            >Add to Cart</button>
+                                        </div>
+
 
                                     </div>
                                 </div>

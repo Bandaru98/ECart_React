@@ -3,16 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { addToCart } from '../../Redux/ProductAction/ProductAction';
 
+
 const Singlepage = () => {
 
     const { id } = useParams()
     // console.log(id);
     const dispatch = useDispatch()
+
     const [pro, setPro] = useState([])
     const [relatedpro, setrelatedpro] = useState([])
     useEffect(() => {
         getdata()
-
+        window.scrollTo(0, 0)
     }, [id])
     const getdata = async () => {
         const data = await fetch(`https://fakestoreapi.com/products`)
@@ -33,10 +35,7 @@ const Singlepage = () => {
             <h3 className='text-center mt-4 mb-4'>Product Description</h3>
 
 
-
-            
-            {/* {pro.map((item) => ( */}
-           <div className='container'>
+            <div className='container'>
                 <div className='row'>
                     <div className='col-md-6'>
                         <Link to={`/product/${pro.id}`}>
@@ -65,17 +64,12 @@ const Singlepage = () => {
                         </div>
                     </div>
                 </div>
-            </div> 
-            {/* )) */}
-            {/* } */}
-
-
+            </div>
 
 
             {/*  */}
 
             <h3 className='text-center mt-4 mb-4'>Products</h3>
-
 
             {relatedpro.length > 0 ? (
                 <div className='container'>
