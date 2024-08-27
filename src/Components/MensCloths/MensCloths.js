@@ -5,7 +5,7 @@ const MensCloths = () => {
     const [proitem, setProitem] = useState([])
     useEffect(() => {
         getdata()
-        mens()
+        
     }, [])
     const getdata = async () => {
         const data = await fetch(`https://fakestoreapi.com/products`)
@@ -14,10 +14,20 @@ const MensCloths = () => {
         setPro(result)
  
     }
-const mens=()=>{
-    const mens = pro.filter((item) => item.category === "men's clothing");
-    setProitem(mens);
+    
+const mens=async()=>{
+    
+    const data = await fetch(`https://fakestoreapi.com/products`)
+    const result = await data.json()
+   const getdata=result.filter((item)=>{
+    return item.category===`men's clothing`
+   })
+   setProitem(getdata)
 }
+
+
+
+
 
 
   return (
