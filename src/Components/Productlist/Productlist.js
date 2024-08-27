@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { addToCart } from '../../Redux/ProductAction/ProductAction';
+import { addToCart } from '../../Redux/ProductAction/ProductAction';
+
 
 const Productlist = () => {
-
+    const dispatch = useDispatch()
     const [pro, setPro] = useState([])
     useEffect(() => {
         getdata()
@@ -96,9 +97,17 @@ const Productlist = () => {
                                         <div style={{ height: '15rem', overflow: 'hidden' }}>
                                             <p>Desc: {item.description}</p>
                                         </div>
-                                        <h4 className='mb-1'>Price: {item.price}</h4>
-                                        <h4>Ratings: {item.rating.rate}</h4>
+                                        <h5 className='mb-1'>Price: {item.price}</h5>
+
                                     </div>
+
+                                    <div className='d-flex justify-content-between mt-4 mb-4 ms-4 me-4'>
+                                        <h5>Ratings: {item.rating.rate}</h5>
+                                        <button className='btn btn-info'
+                                            onClick={() => {dispatch(addToCart(item))}}
+                                        >Add to Cart</button>
+                                    </div>
+
                                 </div>
                             </div>
                         ))

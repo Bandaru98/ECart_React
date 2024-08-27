@@ -6,3 +6,6 @@ export const addToCart = (product) => {
 export const removeFromCart = (id) => {
     return {type:ACTION_TYPE.REMOVE_FROM_CART,payload:id}
 }
+export const decrementquantity = (id) => {
+    return {type:ACTION_TYPE.DECREMENT_QUANTITY,payload:id}
+}
