@@ -5,16 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Productlist = () => {
 
-    // const dispatch=useDispatch()
-
     const [pro, setPro] = useState([])
-
-
-    // const [proitem, setProitem] = useState([])
 
     useEffect(() => {
         getdata()
-
     }, [])
     const getdata = async () => {
         const data = await fetch(`https://fakestoreapi.com/products`)
@@ -98,7 +92,7 @@ const Productlist = () => {
 
             {pro.length > 0 ? (
                 <div className='container'>
-                    <div className='row mt-4 mb-4'>
+                    <div className='row mt-4 mb-4 d-flex align-items-center justify-content-center'>
                         {
                             pro.map((item) => (
 
@@ -112,8 +106,11 @@ const Productlist = () => {
                                         </Link>
                                         <div className='ms-4'>
                                             <h4>Category: {item.category}</h4>
-                                            <p>Desc: {item.description}</p>
-                                            <h4>Price: {item.price}</h4>
+                                            <div style={{ height: '15rem', overflow: 'hidden' }}>
+                                                <p>Desc: {item.description}</p>
+                                            </div>
+
+                                            <h4 className='mb-1'>Price: {item.price}</h4>
                                             <h4>Ratings: {item.rating.rate}</h4>
                                         </div>
 
