@@ -1,65 +1,67 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import { addToCart } from '../../Redux/ProductAction/ProductAction';
 
 const Productlist = () => {
-    
-// const dispatch=useDispatch()
 
-const [pro, setPro] = useState([])
+    // const dispatch=useDispatch()
+
+    const [pro, setPro] = useState([])
 
 
-// const [proitem, setProitem] = useState([])
+    // const [proitem, setProitem] = useState([])
 
-useEffect(() => {
-    getdata()
-    
-}, [])
-const getdata = async () => {
-    const data = await fetch(`https://fakestoreapi.com/products`)
-    const result = await data.json()
-    // console.log(data);
-    setPro(result)
+    useEffect(() => {
+        getdata()
 
-}
+    }, [])
+    const getdata = async () => {
+        const data = await fetch(`https://fakestoreapi.com/products`)
+        const result = await data.json()
+        // console.log(data);
+        setPro(result)
 
-const menscloths=async()=>{
-
-const data = await fetch(`https://fakestoreapi.com/products`)
-const result = await data.json()
-const getdata=result.filter((item)=>{
-return item.category===`men's clothing`
-})
-setPro(getdata)
-}
-const womencloths=async()=>{
-
-    const data = await fetch(`https://fakestoreapi.com/products`)
-    const result = await data.json()
-    const getdata=result.filter((item)=>{
-    return item.category===`women's clothing`
-    })
-    setPro(getdata)
     }
-    const jewellery=async()=>{
+
+    const menscloths = async () => {
 
         const data = await fetch(`https://fakestoreapi.com/products`)
         const result = await data.json()
-        const getdata=result.filter((item)=>{
-        return item.category===`jewelery`
+        const getdata = result.filter((item) => {
+            return item.category === `men's clothing`
         })
         setPro(getdata)
-        }
+    }
+    const womencloths = async () => {
 
-        const electronics=async()=>{
+        const data = await fetch(`https://fakestoreapi.com/products`)
+        const result = await data.json()
+        const getdata = result.filter((item) => {
+            return item.category === `women's clothing`
+        })
+        setPro(getdata)
+    }
 
-            const data = await fetch(`https://fakestoreapi.com/products`)
-            const result = await data.json()
-            const getdata=result.filter((item)=>{
-            return item.category===`electronics`
-            })
-            setPro(getdata)
-            }
+    const jewellery = async () => {
+
+        const data = await fetch(`https://fakestoreapi.com/products`)
+        const result = await data.json()
+        const getdata = result.filter((item) => {
+            return item.category === `jewelery`
+        })
+        setPro(getdata)
+    }
+
+    const electronics = async () => {
+
+        const data = await fetch(`https://fakestoreapi.com/products`)
+        const result = await data.json()
+        const getdata = result.filter((item) => {
+            return item.category === `electronics`
+        })
+        setPro(getdata)
+    }
 
 
 
@@ -72,27 +74,27 @@ const womencloths=async()=>{
                     <div className='col-md-12'>
                         <div className='text-center mt-4 d-flex justify-content-center'>
                             <button className='btn btn-gray border'
-                          onClick={getdata}
+                                onClick={getdata}
                             >All</button>
                             <button className='btn btn-gray border ms-2'
-                               onClick={menscloths} 
+                                onClick={menscloths}
                             >Men's Clothing</button>
                             <button className='btn btn-gray border ms-2'
-                            onClick={womencloths}
+                                onClick={womencloths}
                             >Women Clothing</button>
                             <button className='btn btn-gray border ms-2'
-                            onClick={jewellery}
+                                onClick={jewellery}
                             >Jewellery</button>
-                            <button className='btn btn-gray border ms-2' 
-                            onClick={electronics}>
+                            <button className='btn btn-gray border ms-2'
+                                onClick={electronics}>
                                 Electronics</button>
                         </div>
                     </div>
                 </div>
             </div>
-{/*  */}
+            {/*  */}
 
-<h3 className='text-center mt-4 mb-4'>Products</h3>
+            <h3 className='text-center mt-4 mb-4'>Products</h3>
 
             {pro.length > 0 ? (
                 <div className='container'>
@@ -102,12 +104,12 @@ const womencloths=async()=>{
 
                                 <div className='col-md-4'>
                                     <div className='card g-4 mb-4'>
+                                        <Link to={`/product/${item.id}`}>
+                                            <div className='d-flex align-items-center justify-content-center mt-4 mb-4'>
+                                                <img src={item.image} alt='image' className='img-fluid' style={{ height: '200px', width: '200px' }} />
 
-                                        <div className='d-flex align-items-center justify-content-center mt-4 mb-4'>
-                                            <img src={item.image} alt='image' className='img-fluid' style={{ height: '200px', width: '200px' }} />
-
-                                        </div>
-
+                                            </div>
+                                        </Link>
                                         <div className='ms-4'>
                                             <h4>Category: {item.category}</h4>
                                             <p>Desc: {item.description}</p>
