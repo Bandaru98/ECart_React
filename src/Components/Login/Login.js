@@ -10,9 +10,9 @@ const Login = () => {
                     <div className='col-md-4'>
                         <h3 className='text-center'>Login</h3>
                         <hr className='mt-4' />
-                        <form className='mt-4'>
+                        <form action='http://localhost:3000/' className='mt-4'>
                             <label className='form-label mt-4' for='email'>Email:</label>
-                            <input type='text' id='email' className='form-control' placeholder='Enter your email123@gmail.com here...' />
+                            <input type='text' id='email' className='form-control' placeholder='Enter your email123@gmail.com here...' required />
                             <label className='form-label mt-4' for='password'>Password:</label>
                             <input type='text' id='password' className='form-control' placeholder='Enter your Password here...' />
                             <p className='mt-4'> New here?

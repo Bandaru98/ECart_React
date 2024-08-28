@@ -10,9 +10,9 @@ const Register = () => {
                     <hr className='mt-4' />
                     <div className='col-md-4'></div>
                     <div className='col-md-4'>
-                        <form className='mt-2'>
+                        <form action='http://localhost:3000/' className='mt-2'>
                             <label className='form-label' for='username'>FullName</label>
-                            <input type='text' id='username' className='form-control' placeholder='Enter Your FullName here..' />
+                            <input type='text' id='username' className='form-control' placeholder='Enter Your FullName here..'required />
                             <label className='form-label mt-4' for='email'>Email</label>
                             <input type='text' id='email' className='form-control' placeholder='Enter your email123@gmail.com here...' />
                             <label className='form-label mt-4' for='password'>Password</label>
