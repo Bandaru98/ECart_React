@@ -43,6 +43,11 @@ const Cart = () => {
                                                 style={{ border: '0px', backgroundColor: '#0f3460', color: 'white' }}
                                                 onClick={() => { dispatch(addToCart(item)) }}
                                             >+</button>
+
+                                            {/* <button className='ms-1 ps-2 pe-2 pb-1'
+                                                style={{ border: '0px', backgroundColor: '#0f3460', color: 'white' }}
+                                                onClick={() => { dispatch(decrementquantity(item.id)) }}
+                                            >-</button> */}
                                             <button className='ms-1 ps-2 pe-2 pb-1'
                                                 style={{ border: '0px', backgroundColor: '#0f3460', color: 'white' }}
                                                 onClick={() => { dispatch(decrementquantity(item.id)) }}

@@ -1,16 +1,17 @@
 
 import './App.css';
-import Fetchdata from './Components/Fetchdata/Fetchdata';
 import Header from './Components/Header/Header';
 import Routing from './Routing/Routing';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <div>
-
-    <Header/>
-    <Routing/>
-    {/* <Fetchdata/> */}
+      <Header />
+      <Routing />
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 }

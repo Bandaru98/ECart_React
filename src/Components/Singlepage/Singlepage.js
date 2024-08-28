@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { addToCart } from '../../Redux/ProductAction/ProductAction';
-
+import { toast } from 'react-toastify';
 
 const Singlepage = () => {
 
@@ -54,7 +54,9 @@ const Singlepage = () => {
                         </div>
                         <div>
                             <button className='btn btn-info mt-4 add-cart-btn'
-                                onClick={() => { dispatch(addToCart(pro)) }}
+                                onClick={() => { dispatch(addToCart(pro));
+                                    toast.info('Item added')
+                                 }}
                             >Add to Cart</button>
                             {/* <button type="button" class="btn btn-lg btn-danger" 
                                 data-bs-toggle="popover" title="Popover title"

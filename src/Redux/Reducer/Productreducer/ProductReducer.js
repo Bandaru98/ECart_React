@@ -19,8 +19,6 @@ export default (state = initialState, action) => {
                 }
             }
 
-
-
         case 'REMOVE_FROM_CART':
             const removeitem = state.cartdata.filter((item) => {
                 return item.id !== action.payload
@@ -33,9 +31,7 @@ export default (state = initialState, action) => {
             const decrementitem = state.cartdata.find((item) => {
                 return item.id === action.payload
             })
-            if (decrementitem) {
-                decrementitem.quantity = decrementitem.quantity > 1 ? decrementitem.quantity - 1 : 1
-            }
+            decrementitem.quantity = decrementitem.quantity > 1 ? decrementitem.quantity - 1 : 1
             return {
                 ...state, cartdata: [...state.cartdata]
             }

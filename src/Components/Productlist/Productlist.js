@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../Redux/ProductAction/ProductAction';
+import { toast } from 'react-toastify';
 
 
 const Productlist = () => {
@@ -104,7 +105,9 @@ const Productlist = () => {
                                     <div className='d-flex justify-content-between mt-4 mb-4 ms-4 me-4'>
                                         <h5>Ratings: {item.rating.rate}</h5>
                                         <button className='btn btn-info'
-                                            onClick={() => {dispatch(addToCart(item))}}
+                                            onClick={() => {dispatch(addToCart(item));
+                                                toast.info('Item added')
+                                            }}
                                         >Add to Cart</button>
                                     </div>
 
