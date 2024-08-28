@@ -9,7 +9,6 @@ const About = () => {
     const getdata = async () => {
         const data = await fetch(`https://fakestoreapi.com/products?limit=15`)
         const result = await data.json()
-        // console.log(data);
         setPro(result)
     }
 
@@ -30,18 +29,13 @@ const About = () => {
                     }
                     <div className='row mt-2'>
                         <h4 className='text-center mt-4'>Our Shop Items</h4>
-                        {
-                            pro.map((item) => (
+                        {pro.map((item) => (
                                 <div className='col text-center mt-4'>
                                     <img src={item.image} alt={item.id} className='img-fluid' style={{ height: '7rem' }}></img>
                                     <p className='mt-2'>{item.category}</p>
-
                                 </div>
                             ))
                         }
-                        {/* <div className='ms-4'> */}
-
-
                     </div>
                 </div>
             </div>

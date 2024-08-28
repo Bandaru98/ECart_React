@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { addToCart } from '../../Redux/ProductAction/ProductAction';
 import { toast } from 'react-toastify';
 
-
 const Productlist = () => {
+
     const dispatch = useDispatch()
+
     const [pro, setPro] = useState([])
     useEffect(() => {
         getdata()
@@ -55,7 +56,7 @@ const Productlist = () => {
     }
 
     return (
-        <div>
+        <>
             <div className='container'>
                 <div className='row'>
                     <h3 className='text-center mt-4'>Latest Products</h3>
@@ -101,16 +102,15 @@ const Productlist = () => {
                                         <h5 className='mb-1'>Price: {item.price}</h5>
 
                                     </div>
-
                                     <div className='d-flex justify-content-between mt-4 mb-4 ms-4 me-4'>
                                         <h5>Ratings: {item.rating.rate}</h5>
                                         <button className='btn btn-info'
-                                            onClick={() => {dispatch(addToCart(item));
+                                            onClick={() => {
+                                                dispatch(addToCart(item));
                                                 toast.info('Item added')
                                             }}
                                         >Add to Cart</button>
                                     </div>
-
                                 </div>
                             </div>
                         ))
@@ -122,7 +122,7 @@ const Productlist = () => {
                 (<div> No Items</div>)
             }
 
-        </div>
+        </>
     )
 }
 

@@ -20,8 +20,9 @@ const Contact = () => {
 
                             <button className='btn btn-info mt-4'>Send</button>
                         </form>
-                        <div className='mt-4 mb-4'>Made with
-                            <span style={{ color: 'red' }}> &#9829; </span> by <u>Your Favourite Shoping Mall</u></div>
+                        <div className='mt-4 mb-4'>Create
+                            <span style={{ color: 'red' }}> &#9829; </span> by <u>Your Favourite Shoping Mall</u>
+                        </div>
                     </div>
                     <div className='col-md-4'></div>
                 </div>

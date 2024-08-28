@@ -24,7 +24,7 @@ const Register = () => {
                             </p>
                             <button className='btn btn-info'>Register</button>
                         </form>
-                        <div className='mt-4'>Made with
+                        <div className='mt-4'>Create
                             <span style={{ color: 'red' }}> &#9829; </span> by <u>Your's Favourite Company</u></div>
                     </div>
                     <div className='col-md-4'></div>

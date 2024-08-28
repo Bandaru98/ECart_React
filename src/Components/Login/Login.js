@@ -7,7 +7,6 @@ const Login = () => {
             <div className='container'>
                 <div className='row mt-4 mb-4'>
                     <div className='col-md-4'></div>
-
                     <div className='col-md-4'>
                         <h3 className='text-center'>Login</h3>
                         <hr className='mt-4' />
@@ -23,10 +22,10 @@ const Login = () => {
                             </p>
                             <button className='btn btn-info'>Login</button>
                         </form>
-                        <div className='mt-4'>Made with
-                            <span style={{ color: 'red' }}> &#9829; </span> by <u>Company</u></div>
+                        <div className='mt-4'>Create
+                            <span style={{ color: 'red' }}> &#9829; </span> by <u>Company</u>
+                        </div>
                     </div>
-
                     <div className='col-md-4'></div>
                 </div>
             </div>

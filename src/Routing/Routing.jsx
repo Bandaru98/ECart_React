@@ -20,17 +20,9 @@ const Routing = () => {
                 <Route path='/product/:id' element={<Singlepage />} />
 
                 <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register/>} />
-                <Route path='/about' element={<About/>} />
-                <Route path='/contact' element={<Contact/>} />
-
-
-
-
-
-
-
-
+                <Route path='/register' element={<Register />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
 
             </Routes>
         </>

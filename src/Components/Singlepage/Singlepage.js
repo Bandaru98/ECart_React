@@ -12,10 +12,12 @@ const Singlepage = () => {
 
     const [pro, setPro] = useState([])
     const [relatedpro, setrelatedpro] = useState([])
+
     useEffect(() => {
         getdata()
         window.scrollTo(0, 0)
     }, [id])
+
     const getdata = async () => {
         const data = await fetch(`https://fakestoreapi.com/products`)
         const result = await data.json()
@@ -31,9 +33,8 @@ const Singlepage = () => {
 
 
     return (
-        <div>
+        <>
             <h3 className='text-center mt-4 mb-4'>Product Description</h3>
-
 
             <div className='container'>
                 <div className='row'>
@@ -41,7 +42,6 @@ const Singlepage = () => {
                         <Link to={`/product/${pro.id}`}>
                             <div className='d-flex align-items-center justify-content-center mt-4 mb-4'>
                                 <img src={pro.image} alt='image' className='img-fluid' style={{ height: '250px', width: '250px' }} />
-
                             </div>
                         </Link>
                     </div>
@@ -54,9 +54,10 @@ const Singlepage = () => {
                         </div>
                         <div>
                             <button className='btn btn-info mt-4 add-cart-btn'
-                                onClick={() => { dispatch(addToCart(pro));
+                                onClick={() => {
+                                    dispatch(addToCart(pro));
                                     toast.info('Item added')
-                                 }}
+                                }}
                             >Add to Cart</button>
                             {/* <button type="button" class="btn btn-lg btn-danger" 
                                 data-bs-toggle="popover" title="Popover title"
@@ -69,7 +70,7 @@ const Singlepage = () => {
             </div>
 
 
-            {/*  */}
+            {/* Related products */}
 
             <h3 className='text-center mt-4 mb-4'>Products</h3>
 
@@ -100,7 +101,7 @@ const Singlepage = () => {
             )}
 
 
-        </div>
+        </>
     )
 }
 

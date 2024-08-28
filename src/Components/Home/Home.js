@@ -6,8 +6,8 @@ import Fetchdata from '../Fetchdata/Fetchdata'
 const Home = () => {
   return (
     <>
-      <Background/>
-      <Productlist/>
+      <Background />
+      <Productlist />
       {/* <Fetchdata/> */}
     </>
   )

@@ -1,10 +1,8 @@
-
 import './App.css';
 import Header from './Components/Header/Header';
 import Routing from './Routing/Routing';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 function App() {
   return (
