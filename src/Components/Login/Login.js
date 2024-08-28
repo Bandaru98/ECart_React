@@ -23,7 +23,7 @@ const Login = () => {
                             <button className='btn btn-info'>Login</button>
                         </form>
                         <div className='mt-4'>Create
-                            <span style={{ color: 'red' }}> &#9829; </span> by <u>Company</u>
+                            <span style={{ color: 'red' }}> &#9829; </span> by <u>Your Favourite shop</u>
                         </div>
                     </div>
                     <div className='col-md-4'></div>
