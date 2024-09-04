@@ -7,7 +7,8 @@ const About = () => {
         getdata()
     }, [])
     const getdata = async () => {
-        const data = await fetch(`https://fakestoreapi.com/products?limit=15`)
+        // const data = await fetch(`https://fakestoreapi.com/products?limit=15`)
+        const data = await fetch(`https://fakestoreapi.com/products?limit=5`)
         const result = await data.json()
         setPro(result)
     }
