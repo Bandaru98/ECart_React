@@ -26,7 +26,6 @@ export default (state = initialState, action) => {
 
             return { ...state, cartdata: removeitem }
 
-
         case 'DECREMENT_QUANTITY':
             const decrementitem = state.cartdata.find((item) => {
                 return item.id === action.payload
@@ -35,7 +34,6 @@ export default (state = initialState, action) => {
             return {
                 ...state, cartdata: [...state.cartdata]
             }
-
 
         default:
             return state

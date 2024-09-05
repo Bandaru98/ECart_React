@@ -9,7 +9,6 @@ import Register from '../Components/Register/Register'
 import About from '../Components/About/About'
 import Contact from '../Components/Contact/Contact'
 
-
 const Routing = () => {
     return (
         <>
