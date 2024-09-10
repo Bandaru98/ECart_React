@@ -12,8 +12,6 @@ import Contact from '../Components/Contact/Contact'
 const Routing = () => {
     return (
         <>
-
-        //
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/products' element={<Fetchdata />} />
